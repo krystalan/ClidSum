@@ -8,7 +8,8 @@ In this work, we introduce cross-lingual dialogue summarization task and present
 ## ClidSum Benchmark Dataset  
 <ins>**Please restrict your usage of this dataset to research purpose only.**</ins>
 
-You can download our ClidSum from the share links: [XSAMSum](https://drive.google.com/file/d/1zmKKF5xX1RJCk0x_cyKgrVzkQf5B5awy/view?usp=sharing), [XMediaSum40k](https://drive.google.com/file/d/1ETwdHFKEp-DZYLejHvoMp3CXn-kTsmoB/view?usp=sharing) (note that `MediaSum424k` is the subset of MediaSum. You can obtain it from [original work](https://github.com/zcgzcgzcg1/MediaSum/)). 
+You can download our ClidSum from the share links: [XSAMSum](https://drive.google.com/file/d/1zmKKF5xX1RJCk0x_cyKgrVzkQf5B5awy/view?usp=sharing), [XMediaSum40k](https://drive.google.com/file/d/1ETwdHFKEp-DZYLejHvoMp3CXn-kTsmoB/view?usp=sharing)   
+(note that `MediaSum424k` is the subset of MediaSum. You can obtain it from [original work](https://github.com/zcgzcgzcg1/MediaSum/)). 
 
 XMediaSum40k is constructed based on 40k samples randomly selected from the MediaSum corpus (totally 463k). To know which samples are selected, you can find original `ID` of each sample via [train_val_test_split.40k.json](https://drive.google.com/file/d/1gi5Q_P-ANxULualTtZITTJ8YDu6jNQAQ/view?usp=sharing) file.  
 
