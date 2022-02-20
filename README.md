@@ -6,7 +6,7 @@ In this work, we introduce cross-lingual dialogue summarization task and present
 - `mDialBART` extends mBART-50 via the second pre-training stage.    
 
 ## ClidSum Benchmark Dataset  
-<u>**Please restrict your usage of this dataset to research purpose only.**</u>
+<ins>**Please restrict your usage of this dataset to research purpose only.**</ins>
 
 You can download our ClidSum from the share links: [XSAMSum](https://drive.google.com/file/d/1zmKKF5xX1RJCk0x_cyKgrVzkQf5B5awy/view?usp=sharing), [XMediaSum40k](https://drive.google.com/file/d/1ETwdHFKEp-DZYLejHvoMp3CXn-kTsmoB/view?usp=sharing) (note that `MediaSum424k` is the subset of MediaSum. You can obtain it from [original work](https://github.com/zcgzcgzcg1/MediaSum/)). 
 
