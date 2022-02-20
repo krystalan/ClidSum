@@ -9,7 +9,8 @@ In this work, we introduce cross-lingual dialogue summarization task and present
 <ins>**Please restrict your usage of this dataset to research purpose only.**</ins>
 
 You can obtain `ClidSum` from the share links: [XSAMSum](https://drive.google.com/file/d/1zmKKF5xX1RJCk0x_cyKgrVzkQf5B5awy/view?usp=sharing), [XMediaSum40k](https://drive.google.com/file/d/1ETwdHFKEp-DZYLejHvoMp3CXn-kTsmoB/view?usp=sharing).   
-Note that `MediaSum424k` is the subset of MediaSum. Please refer to the [original work](https://github.com/zcgzcgzcg1/MediaSum/).   
+For `MediaSum424k`, please refer to the [MediaSum Repository](https://github.com/zcgzcgzcg1/MediaSum/) since `MediaSum424k` is the subset of MediaSum.
+  
 
 The format of obtained JSON files is as follows:
 ```
