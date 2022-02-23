@@ -1,0 +1,6 @@
+torch==1.10.0
+transformers==4.12.3
+sentencepiece
+pytorch-lightning==0.8.5
+pillow==8.3.2
+test-tube==0.7.5
