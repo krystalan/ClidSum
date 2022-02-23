@@ -64,7 +64,7 @@ Our released models are listed as following. You can import these models by usin
 
 | Model | Checkpoint |
 | :--: | :--: |
-| mDialBART (En-De) | [Krystalan/mdialbart_de](https://huggingface.co/Krystalan/mdialbart_de/tree/main) |
+| mDialBART (En-De) | [Krystalan/mdialbart_de](https://huggingface.co/Krystalan/mdialbart_de) |
 | mDialBART (En-Zh) | [Krystalan/mdialbart_zh](https://huggingface.co/Krystalan/mdialbart_zh) |
 
 
