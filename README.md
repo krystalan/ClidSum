@@ -137,4 +137,4 @@ If you find this work is useful or use the data in your work, please consider ci
   primaryClass={cs.CL}
 }
 ```
-Please feel free to email Jiaan Wang (jawang1[at].stu.suda.edu.cn) for questions and suggestions.
+Please feel free to email Jiaan Wang (jawang1[at]stu.suda.edu.cn) for questions and suggestions.
