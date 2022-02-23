@@ -1,15 +1,32 @@
-# ClidSum
+## ClidSum: A Benchmark Dataset for Cross-Lingual Dialogue Summarization
 This repository contains the data, codes and model checkpoints for our paper ["ClidSum: A Benchmark Dataset for Cross-Lingual Dialogue Summarization"](https://arxiv.org/abs/2202.05599).   
+
+## Quick Links
+- [Overview](#overview)
+- [ClidSum Benchmark Dataset](#clidsum-benchmark-dataset)
+- [Model List](#model-list)
+- [Use mDialBART with Huggingface](#use-mdialbart-with-huggingface)
+- [Finetune mDialBART](#finetune-mdialbart)
+    - [Requirements](#requirements)
+    - [Fine-tuning](#finetuning)
+    - [Evaluation](#evaluation)
+- [Citation and Contact](#citation-and-contact)
+
+## Overview
 
 In this work, we introduce cross-lingual dialogue summarization task and present `ClidSum` benchmark dataset together with `mDialBART` pre-trained language model.
 - `ClidSum` contains `XSAMSum`, `XMediaSum40k` and `MediaSum424k` three subsets.    
-- `mDialBART` extends mBART-50 via the second pre-training stage.    
+- `mDialBART` extends mBART-50 via the second pre-training stage. The following figure is an illustration of our `mDialBART`.
+
+![](figure/model.png)
 
 ## ClidSum Benchmark Dataset  
 <ins>**Please restrict your usage of this dataset to research purpose only.**</ins>
 
 You can obtain `ClidSum` from the share links: [XSAMSum](https://drive.google.com/file/d/1zmKKF5xX1RJCk0x_cyKgrVzkQf5B5awy/view?usp=sharing), [XMediaSum40k](https://drive.google.com/file/d/1ETwdHFKEp-DZYLejHvoMp3CXn-kTsmoB/view?usp=sharing).   
-For `MediaSum424k`, please refer to the [MediaSum Repository](https://github.com/zcgzcgzcg1/MediaSum/) since `MediaSum424k` is the subset of MediaSum.
+For `MediaSum424k`, please refer to the [MediaSum Repository](https://github.com/zcgzcgzcg1/MediaSum/) since `MediaSum424k` is the subset of MediaSum. The following table shows the statistics of our `ClidSum`.
+
+![](figure/dataset.png)
   
 
 The format of obtained JSON files is as follows:
@@ -32,18 +49,70 @@ The format of obtained JSON files is as follows:
 ```
 `summary` represents the original English summary of the corresponding `dialogue`. `summary_de` and `summary_zh` indicate the human-translated German and Chinese summaries, respectively.
 
-In addition, as described in our paper, `XMediaSum40k` is constructed based on 40k samples randomly selected from the MediaSum corpus (totally 463k samples). To know which samples are selected, you can find original `ID` of each sample from [train_val_test_split.40k.json](https://drive.google.com/file/d/1gi5Q_P-ANxULualTtZITTJ8YDu6jNQAQ/view?usp=sharing) file.  
+In addition, as described in our paper, `XMediaSum40k` is constructed based on 40k samples randomly selected from the MediaSum corpus (totally 463k samples). To know which samples are selected, you can find original `ID` of each sample from [train_val_test_split.40k.json](https://drive.google.com/file/d/1gi5Q_P-ANxULualTtZITTJ8YDu6jNQAQ/view?usp=sharing) file.   
+
 
 License: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-## mDialBART
+## Model List
+Our released models are listed as following. You can import these models by using [HuggingFace's Transformers](https://github.com/huggingface/transformers).   
 
-The checkpoints of `mDialBART` will be released soon.
+| Model | Checkpoint |
+| :--: | :--: |
+| mDialBART (En-De) | [Krystalan/mdialbart_de](https://huggingface.co/Krystalan/mdialbart_de/tree/main) |
+| mDialBART (En-Zh) | [Krystalan/mdialbart_zh](https://huggingface.co/Krystalan/mdialbart_zh) |
 
-## Usage
+
+## Use mDialBART with Huggingface
+You can easily import our models with HuggingFace's `transformers`:
+
+```python
+from transformers import MBartForConditionalGeneration, MBartTokenizer, MBart50TokenizerFast
+
+# The tokenizer used in mDialBART is based on the mBART50's tokenizer, and we only add a special token [SUM] to indicate the summarization task during the second pre-training stage.
+tokenizer = MBart50TokenizerFast.from_pretrained('facebook/mbart-large-50-many-to-many-mmt', src_lang='en_XX', tgt_lang='de_DE')
+tokenizer.add_tokens(['[summarize]']) 
+
+# Import our models. The package will take care of downloading the models automatically
+model = MBartForConditionalGeneration.from_pretrained('Krystalan/mdialbart_de')
+```
+
+## Finetune mDialBART
+In the following section, we describe how to finetune a mdialbart model by using our code.
+
+### Requirements
+Please run the following script to install the dependencies:
+```
+pip install -r requirements.txt
+```  
+
+### Finetuning
 [TODO]
 
-## Citation
+### Evaluation
+For ROUGE Scores, we utilize the [Multilingual ROUGE Scoring](https://github.com/csebuetnlp/xl-sum/tree/master/multilingual_rouge_scoring) toolkit. The evaluation command like this:
+```bash
+python rouge.py \
+    --rouge_types=rouge1,rouge2,rougeL \
+    --target_filepattern=gold.txt \
+    --prediction_filepattern=generated.txt \
+    --output_filename=scores.csv \
+    --lang="german" \ # "zhongwen" for Chinese
+    --use_stemmer=true
+```
+
+For BERTScore, you should first download the [chinese-bert-wwm-ext](https://huggingface.co/hfl/chinese-bert-wwm-ext) and [bert-base-german-uncased](https://huggingface.co/dbmdz/bert-base-german-uncased) models, and then use the [bert_score](https://github.com/Tiiiger/bert_score) toolkit. The evaluation command like this:
+
+```bash
+model_path=xxx/chinese-bert-wwm-ext # For Chinese
+model_path=xxx/bert-base-german-uncased # For German
+
+bert-score -r $gold_file_path -c $generate_file_path --lang zh --model $model_path --num_layers 8 # For Chinese
+bert-score -r $gold_file_path -c $generate_file_path --lang de --model $model_path --num_layers 8 # For German
+```
+
+
+## Citation and Contact
 If you find this work is useful or use the data in your work, please consider cite our paper:
 ```
 @article{Wang2022ClidSumAB,
@@ -55,3 +124,4 @@ If you find this work is useful or use the data in your work, please consider ci
   primaryClass={cs.CL}
 }
 ```
+Please feel free to email Jiaan Wang (jawang1[at].stu.suda.edu.cn) for questions and suggestions.
