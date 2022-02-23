@@ -1,6 +1,11 @@
 ## ClidSum: A Benchmark Dataset for Cross-Lingual Dialogue Summarization
 This repository contains the data, codes and model checkpoints for our paper ["ClidSum: A Benchmark Dataset for Cross-Lingual Dialogue Summarization"](https://arxiv.org/abs/2202.05599).   
 
+###  updates
+- *2022.02.23*: We released our [model checkpoints](#model-list).
+- *2022.02.22*: We released the [ClidSum benchmark dataset](#clidsum-benchmark-dataset).
+- *2022.02.14*: We released [our paper](https://arxiv.org/abs/2202.05599). Check it out!
+
 ## Quick Links
 - [Overview](#overview)
 - [ClidSum Benchmark Dataset](#clidsum-benchmark-dataset)
