@@ -113,7 +113,7 @@ pip install -r requirements.txt
 
 ```bash
 # Finetuning mDialBART on XMediaSum40k (En-De):
-python -u XLDS_XMediaSum40k.py \
+python -u run_XMediaSum40k.py \
     --model_path Krystalan/mdialbart_de \
     --data_root data/XMediaSum40k \
     --tgt_lang de_DE \
@@ -121,7 +121,7 @@ python -u XLDS_XMediaSum40k.py \
     --fp32
 
 # Finetuning mDialBART on XMediaSum40k (En-Zh):
-python -u XLDS_XMediaSum40k.py \
+python -u run_XMediaSum40k.py \
     --model_path Krystalan/mdialbart_zh \
     --data_root data/XMediaSum40k \
     --tgt_lang zh_CN \
@@ -133,7 +133,7 @@ python -u XLDS_XMediaSum40k.py \
 Moreover, if you want to fine-tune `mBART-50` by using our code, you should change the `model_path` to mbart-50:  
 ```bash
 # Finetuning mBART-50 on XMediaSum40k (En-De):
-python -u XLDS_XMediaSum40k.py \
+python -u run_XMediaSum40k.py \
     --model_path facebook/mbart-large-50-many-to-many-mmt \
     --data_root data/XMediaSum40k \
     --tgt_lang de_DE \
@@ -141,7 +141,7 @@ python -u XLDS_XMediaSum40k.py \
     --fp32
 
 # Finetuning mBART50 on XMediaSum40k (En-Zh):
-python -u XLDS_XMediaSum40k.py \
+python -u run_XMediaSum40k.py \
     --model_path facebook/mbart-large-50-many-to-many-mmt \
     --data_root data/XMediaSum40k \
     --tgt_lang zh_CN \
