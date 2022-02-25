@@ -2,6 +2,7 @@
 This repository contains the data, codes and model checkpoints for our paper ["ClidSum: A Benchmark Dataset for Cross-Lingual Dialogue Summarization"](https://arxiv.org/abs/2202.05599).   
 
 ###  updates
+- *2022.02.25*: We released our training [code](#finetune-mdialbart).
 - *2022.02.23*: We released our [model checkpoints](#model-list) and [model outputs](#model-outputs).
 - *2022.02.22*: We released the [ClidSum benchmark dataset](#clidsum-benchmark-dataset).
 - *2022.02.14*: We released [our paper](https://arxiv.org/abs/2202.05599). Check it out!
@@ -92,8 +93,62 @@ Please run the following script to install the dependencies:
 pip install -r requirements.txt
 ```  
 
+### Code Structure Overview
+    .
+    ├── run_XMediaSum40k.py
+    │
+    ├── data
+    │   └── XSAMSum
+    │   │       ├── train.json
+    │   │       ├── val.json
+    │   │       └── test.json
+    │   └── XMediaSum40k
+    │           ├── train.json
+    │           ├── val.json
+    │           └── test.json
+    └── model_output
+
 ### Finetuning
-[TODO]
+
+
+```bash
+# Finetuning mDialBART on XMediaSum40k (En-De):
+python -u XLDS_XMediaSum40k.py \
+    --model_path Krystalan/mdialbart_de \
+    --data_root data/XMediaSum40k \
+    --tgt_lang de_DE \
+    --save_prefix mdialbart_de \
+    --fp32
+
+# Finetuning mDialBART on XMediaSum40k (En-Zh):
+python -u XLDS_XMediaSum40k.py \
+    --model_path Krystalan/mdialbart_zh \
+    --data_root data/XMediaSum40k \
+    --tgt_lang zh_CN \
+    --save_prefix mdialbart_zh \
+    --fp32
+
+```
+
+Moreover, if you want to fine-tune `mBART-50` by using our code, you should change the `model_path` to mbart-50:  
+```bash
+# Finetuning mBART-50 on XMediaSum40k (En-De):
+python -u XLDS_XMediaSum40k.py \
+    --model_path facebook/mbart-large-50-many-to-many-mmt \
+    --data_root data/XMediaSum40k \
+    --tgt_lang de_DE \
+    --save_prefix mbart50_de \
+    --fp32
+
+# Finetuning mBART50 on XMediaSum40k (En-Zh):
+python -u XLDS_XMediaSum40k.py \
+    --model_path facebook/mbart-large-50-many-to-many-mmt \
+    --data_root data/XMediaSum40k \
+    --tgt_lang zh_CN \
+    --save_prefix mbart50_zh \
+    --fp32
+```
+
 
 ### Model Outputs
 Output summaries are available at [outputs](https://github.com/krystalan/ClidSum/tree/main/outputs) directory.   
