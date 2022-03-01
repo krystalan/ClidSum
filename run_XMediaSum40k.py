@@ -35,18 +35,18 @@ class SummarizationDataset(Dataset):
     def __getitem__(self, idx):
         entry = self.xlds_dataset[idx]
         if 'mdialbart_' in self.model_name: # add a special token [SUM] when utilizing mdialbart
-            print('1 : the model used in the experiments is mdialbart and we add [SUM] to each XLDS training samples')
+            # the model used in the experiments is mdialbart and we add [SUM] to each XLDS training samples'
             input_ids = self.tokenizer.encode('[summarize] '+ entry['dialogue'].lower(), truncation=True, max_length=self.max_input_len)
         else:
-            print('1 : the model used in the experiments is mbart50 and we do not add any addition tokens')
+            # the model used in the experiments is mbart50 and we do not add any addition tokens
             input_ids = self.tokenizer.encode(entry['dialogue'].lower(), truncation=True, max_length=self.max_input_len)
 
         with self.tokenizer.as_target_tokenizer():
             if self.tgt_lang == 'de_DE':
-                print('2 : load XLDS samples with German target language')
+                # load XLDS samples with German target language
                 output_ids = self.tokenizer.encode(entry['summary_de'].lower(), truncation=True, max_length=self.max_output_len)
             else:
-                print('2 : load XLDS samples with Chinese target language')
+                # load XLDS samples with Chinese target language
                 output_ids = self.tokenizer.encode(entry['summary_zh'].lower(), truncation=True, max_length=self.max_output_len)
         return torch.tensor(input_ids), torch.tensor(output_ids)
 
@@ -69,10 +69,8 @@ class Summarizer(pl.LightningModule):
         self.model = MBartForConditionalGeneration.from_pretrained(self.args.model_path)
 
         if 'mdialbart_' in self.args.model_path:  # mdialbart models have a special token: [SUM]
-            print('3 : add a special token [SUM] to tokenizer')
+            # add a special token [SUM] to tokenizer
             self.tokenizer.add_tokens(['[summarize]'])
-        else:
-            print('3 : use original tokenizer')
         
         self.train_dataloader_object = self.val_dataloader_object = self.test_dataloader_object = None
         self.generated_id = 0
