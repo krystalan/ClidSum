@@ -35,7 +35,7 @@ class SummarizationDataset(Dataset):
     def __getitem__(self, idx):
         entry = self.xlds_dataset[idx]
         if 'mdialbart_' in self.model_name: # add a special token [SUM] when utilizing mdialbart
-            # the model used in the experiments is mdialbart and we add [SUM] to each XLDS training samples'
+            # the model used in the experiments is mdialbart and we add [SUM] to each XLDS samples'
             input_ids = self.tokenizer.encode('[summarize] '+ entry['dialogue'].lower(), truncation=True, max_length=self.max_input_len)
         else:
             # the model used in the experiments is mbart50 and we do not add any addition tokens
