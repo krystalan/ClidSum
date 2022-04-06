@@ -28,9 +28,9 @@ In this work, we introduce cross-lingual dialogue summarization task and present
 ![](figure/model.png)
 
 ## ClidSum Benchmark Dataset  
-<ins>**Please restrict your usage of this dataset to research purpose only.**</ins>
+<ins>**Please restrict your usage of this dataset to research purpose only.**</ins>  
 
-You can obtain `ClidSum` from the share links: [XSAMSum](https://drive.google.com/file/d/1zmKKF5xX1RJCk0x_cyKgrVzkQf5B5awy/view?usp=sharing), [XMediaSum40k](https://drive.google.com/file/d/1ETwdHFKEp-DZYLejHvoMp3CXn-kTsmoB/view?usp=sharing).   
+You can obtain `XMediaSum40k` from the [share links](https://drive.google.com/file/d/1ETwdHFKEp-DZYLejHvoMp3CXn-kTsmoB/view?usp=sharing). Note that, we cannot release XSAMSum due to its CC BY-NC-ND 4.0 license.   
 For `MediaSum424k`, please refer to the [MediaSum Repository](https://github.com/zcgzcgzcg1/MediaSum/) since `MediaSum424k` is the subset of MediaSum. The following table shows the statistics of our `ClidSum`.
 
 ![](figure/dataset.png)
