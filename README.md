@@ -9,7 +9,7 @@ This repository contains the data, codes and model checkpoints for our paper ["C
 - *2022.02.14*: We released [our paper](https://arxiv.org/abs/2202.05599). Check it out!
 
 ## Quick Links
-- [Overview](#overview)
+- [1.Overview](#1overview)
 - [ClidSum Benchmark Dataset](#clidsum-benchmark-dataset)
 - [Model List](#model-list)
 - [Use mDialBART with Huggingface](#use-mdialbart-with-huggingface)
@@ -20,7 +20,7 @@ This repository contains the data, codes and model checkpoints for our paper ["C
     - [Evaluation](#evaluation)
 - [Citation and Contact](#citation-and-contact)
 
-## Overview
+## 1.Overview
 
 In this work, we introduce cross-lingual dialogue summarization task and present `ClidSum` benchmark dataset together with `mDialBART` pre-trained language model.
 - `ClidSum` contains `XSAMSum`, `XMediaSum40k` and `MediaSum424k` three subsets.    
