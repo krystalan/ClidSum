@@ -20,7 +20,7 @@ This repository contains the data, codes and model checkpoints for our paper ["C
     - [Evaluation](#evaluation)
 - [Citation and Contact](#citation-and-contact)
 
-## 1.Overview
+## 1. Overview
 
 In this work, we introduce cross-lingual dialogue summarization task and present `ClidSum` benchmark dataset together with `mDialBART` pre-trained language model.
 - `ClidSum` contains `XSAMSum`, `XMediaSum40k` and `MediaSum424k` three subsets.    
