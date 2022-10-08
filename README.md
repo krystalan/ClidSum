@@ -18,7 +18,8 @@ This repository contains the data, codes and model checkpoints for our paper ["C
     - [Fine-tuning](#finetuning)
     - [Model Outputs](#model-outputs)
     - [Evaluation](#evaluation)
-- [6. Citation and Contact](#6-citation-and-contact)
+- [6. Recommendation](#6-recommendation)
+- [7. Citation and Contact](#7-citation-and-contact)
 
 ## 1. Overview
 
@@ -184,8 +185,12 @@ bert-score -r $gold_file_path -c $generate_file_path --lang zh --model $model_pa
 bert-score -r $gold_file_path -c $generate_file_path --lang de --model $model_path --num_layers 8 # For German
 ```
 
+## 6. Recommendation
+We also kindly recommend two highly related great papers for cross-lingual dialogue summarization research: 
+- [MSAMSum: Towards Benchmarking Multi-lingual Dialogue Summarization](https://aclanthology.org/2022.dialdoc-1.1/) (DialDoc@ACL 2022) \| [[Data](https://github.com/xcfcode/MSAMSum)]
+- [The Cross-lingual Conversation Summarization Challenge](https://arxiv.org/abs/2205.00379) (INIG 2022)
 
-## 6. Citation and Contact
+## 7. Citation and Contact
 If you find this work is useful or use the data in your work, please consider cite our paper:
 ```
 @article{Wang2022ClidSumAB,
