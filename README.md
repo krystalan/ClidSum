@@ -2,6 +2,7 @@
 This repository contains the data, codes and model checkpoints for our paper ["ClidSum: A Benchmark Dataset for Cross-Lingual Dialogue Summarization"](https://arxiv.org/abs/2202.05599).   
 
 ###  updates
+- *2022.10.07*: Our paper is accepted to EMNLP 2022 as a long paper.
 - *2022.02.25*: We released our training [code](#finetune-mdialbart).
 - *2022.02.23*: We released our [model checkpoints](#model-list) and [model outputs](#model-outputs).
 - *2022.02.22*: We released the [ClidSum benchmark dataset](#clidsum-benchmark-dataset).
