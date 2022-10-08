@@ -9,16 +9,16 @@ This repository contains the data, codes and model checkpoints for our paper ["C
 - *2022.02.14*: We released [our paper](https://arxiv.org/abs/2202.05599). Check it out!
 
 ## Quick Links
-- [1.Overview](#1overview)
-- [ClidSum Benchmark Dataset](#clidsum-benchmark-dataset)
-- [Model List](#model-list)
-- [Use mDialBART with Huggingface](#use-mdialbart-with-huggingface)
-- [Finetune mDialBART](#finetune-mdialbart)
+- [1. Overview](#1-overview)
+- [2. ClidSum Benchmark Dataset](#2-clidsum-benchmark-dataset)
+- [3. Model List](#3-model-list)
+- [4. Use mDialBART with Huggingface](#4-use-mdialbart-with-huggingface)
+- [5. Finetune mDialBART](#5-finetune-mdialbart)
     - [Requirements](#requirements)
     - [Fine-tuning](#finetuning)
     - [Model Outputs](#model-outputs)
     - [Evaluation](#evaluation)
-- [Citation and Contact](#citation-and-contact)
+- [6. Citation and Contact](#6-citation-and-contact)
 
 ## 1. Overview
 
@@ -28,7 +28,7 @@ In this work, we introduce cross-lingual dialogue summarization task and present
 
 ![](figure/model.png)
 
-## ClidSum Benchmark Dataset  
+## 2. ClidSum Benchmark Dataset  
 <ins>**Please restrict your usage of this dataset to research purpose only.**</ins>  
 
 You can obtain `XMediaSum40k` from the [share link](https://drive.google.com/file/d/1ETwdHFKEp-DZYLejHvoMp3CXn-kTsmoB/view?usp=sharing).
@@ -66,7 +66,7 @@ In addition, as described in our paper, `XMediaSum40k` is constructed based on 4
 
 License: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-## Model List
+## 3. Model List
 Our released models are listed as following. You can import these models by using [HuggingFace's Transformers](https://github.com/huggingface/transformers).   
 
 | Model | Checkpoint |
@@ -75,7 +75,7 @@ Our released models are listed as following. You can import these models by usin
 | mDialBART (En-Zh) | [Krystalan/mdialbart_zh](https://huggingface.co/Krystalan/mdialbart_zh) |
 
 
-## Use mDialBART with Huggingface
+## 4. Use mDialBART with Huggingface
 You can easily import our models with HuggingFace's `transformers`:
 
 ```python
@@ -89,7 +89,7 @@ tokenizer.add_tokens(['[summarize]'])
 model = MBartForConditionalGeneration.from_pretrained('Krystalan/mdialbart_de')
 ```
 
-## Finetune mDialBART
+## 5. Finetune mDialBART
 In the following section, we describe how to finetune a mdialbart model by using our code.
 
 ### Requirements
@@ -185,7 +185,7 @@ bert-score -r $gold_file_path -c $generate_file_path --lang de --model $model_pa
 ```
 
 
-## Citation and Contact
+## 6. Citation and Contact
 If you find this work is useful or use the data in your work, please consider cite our paper:
 ```
 @article{Wang2022ClidSumAB,
