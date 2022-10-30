@@ -3,9 +3,9 @@ This repository contains the data, codes and model checkpoints for our paper ["C
 
 ###  updates
 - *2022.10.07*: Our paper is accepted to EMNLP 2022 (main conference) as a long paper.
-- *2022.02.25*: We released our training [code](#finetune-mdialbart).
-- *2022.02.23*: We released our [model checkpoints](#model-list) and [model outputs](#model-outputs).
-- *2022.02.22*: We released the [ClidSum benchmark dataset](#clidsum-benchmark-dataset).
+- *2022.02.25*: We released our training [code](#5-finetune-mdialbart).
+- *2022.02.23*: We released our [model checkpoints](#3-model-list) and [model outputs](#model-outputs).
+- *2022.02.22*: We released the [ClidSum benchmark dataset](#2-clidsum-benchmark-dataset).
 - *2022.02.14*: We released [our paper](https://arxiv.org/abs/2202.05599). Check it out!
 
 ## Quick Links
