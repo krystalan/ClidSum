@@ -171,7 +171,7 @@ python rouge.py \
     --target_filepattern=gold.txt \
     --prediction_filepattern=generated.txt \
     --output_filename=scores.csv \
-    --lang="german" \ # "zhongwen" for Chinese
+    --lang="german" \ # "chinese" for Chinese
     --use_stemmer=true
 ```
 
