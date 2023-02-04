@@ -193,13 +193,23 @@ We also kindly recommend two highly related great papers for cross-lingual dialo
 ## 7. Citation and Contact
 If you find this work is useful or use the data in your work, please consider cite our paper:
 ```
-@article{Wang2022ClidSumAB,
-  title={ClidSum: A Benchmark Dataset for Cross-Lingual Dialogue Summarization},
-  author={Jiaan Wang and Fandong Meng and Ziyao Lu and Duo Zheng and Zhixu Li and Jianfeng Qu and Jie Zhou},
-  year={2022},
-  eprint={2202.05599},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL}
+@inproceedings{wang-etal-2022-clidsum,
+    title = "{C}lid{S}um: A Benchmark Dataset for Cross-Lingual Dialogue Summarization",
+    author = "Wang, Jiaan  and
+      Meng, Fandong  and
+      Lu, Ziyao  and
+      Zheng, Duo  and
+      Li, Zhixu  and
+      Qu, Jianfeng  and
+      Zhou, Jie",
+    booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2022",
+    address = "Abu Dhabi, United Arab Emirates",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.emnlp-main.526",
+    pages = "7716--7729",
+    abstract = "We present ClidSum, a benchmark dataset towards building cross-lingual summarization systems on dialogue documents. It consists of 67k+ dialogue documents and 112k+ annotated summaries in different target languages. Based on the proposed ClidSum, we introduce two benchmark settings for supervised and semi-supervised scenarios, respectively. We then build various baseline systems in different paradigms (pipeline and end-to-end) and conduct extensive experiments on ClidSum to provide deeper analyses. Furthermore, we propose mDialBART which extends mBART via further pre-training, where the multiple objectives help the pre-trained model capture the structural characteristics as well as key content in dialogues and the transformation from source to the target language. Experimental results show the superiority of mDialBART, as an end-to-end model, outperforms strong pipeline models on ClidSum. Finally, we discuss specific challenges that current approaches faced with this task and give multiple promising directions for future research. We have released the dataset and code at https://github.com/krystalan/ClidSum.",
 }
 ```
 Please feel free to email Jiaan Wang (jawang1[at]stu.suda.edu.cn) for questions and suggestions.
