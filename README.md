@@ -35,7 +35,7 @@ In this work, we introduce cross-lingual dialogue summarization task and present
 You can obtain `XMediaSum40k` from the [share link](https://drive.google.com/file/d/1ETwdHFKEp-DZYLejHvoMp3CXn-kTsmoB/view?usp=sharing).
 For `MediaSum424k`, please refer to the [MediaSum Repository](https://github.com/zcgzcgzcg1/MediaSum/) since `MediaSum424k` is the subset of MediaSum.
 
-For `XSAMSum`, please send an application email to jawang1[at]stu.suda.edu.cn to obtain it. Note that, we cannot directly release the share link of `XSAMSum` due to the [CC BY-NC-ND 4.0 license](https://creativecommons.org/licenses/by-nc-nd/4.0/) of original `SAMSum` dataset. 
+For `XSAMSum`, please send an application email to jawang.nlp[at]gmail.com to obtain it. Note that, we cannot directly release the share link of `XSAMSum` due to the [CC BY-NC-ND 4.0 license](https://creativecommons.org/licenses/by-nc-nd/4.0/) of original `SAMSum` dataset. 
 
 The following table shows the statistics of our `ClidSum`.  
 
